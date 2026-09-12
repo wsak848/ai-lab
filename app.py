@@ -1,4 +1,4 @@
-"""Version 0.1 of the Artificial Intelligence teaching laboratory."""
+"""Version 0.2 of the Artificial Intelligence teaching laboratory."""
 
 import streamlit as st
 
@@ -56,7 +56,7 @@ st.markdown(
 st.title("🧠 Artificial Intelligence Laboratory")
 st.markdown("Interactive AI Simulation for Teaching and Learning")
 st.markdown("**Instructor: Sakda Wongadyarin**")
-st.caption("ห้องปฏิบัติการปัญญาประดิษฐ์ · เวอร์ชัน 0.1 · 10 หน่วยการเรียนรู้")
+st.caption("ห้องปฏิบัติการปัญญาประดิษฐ์ · เวอร์ชัน 0.2 · 10 หน่วยการเรียนรู้")
 
 st.write(
     "ห้องปฏิบัติการนี้ออกแบบให้นักศึกษาเรียนรู้ปัญญาประดิษฐ์ผ่านการจำลอง"
@@ -78,8 +78,13 @@ with st.container(border=True):
     st.subheader(title)
     st.markdown("**วัตถุประสงค์การเรียนรู้**")
     st.write(objective)
-    st.info("Simulation coming soon", icon="🧪")
-    st.caption("กำลังเตรียมการจำลองแบบโต้ตอบสำหรับหน่วยนี้ในเวอร์ชันถัดไป")
+    if selected == 1:
+        from search_simulation import render_search_simulation
+
+        render_search_simulation()
+    else:
+        st.info("Simulation coming soon", icon="🧪")
+        st.caption("กำลังเตรียมการจำลองแบบโต้ตอบสำหรับหน่วยนี้ในเวอร์ชันถัดไป")
 
 st.divider()
 st.caption("Artificial Intelligence Laboratory")
